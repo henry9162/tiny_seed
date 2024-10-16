@@ -18,7 +18,7 @@ jobs:
             dotnet-version: '7.0.x'
 
       - name: Restore dependencies
-        run: dotnet restore 
+        run: dotnet restore smw/smw.csproj
 
       - name: Build application
         run: dotnet build -c Release --no-restore
