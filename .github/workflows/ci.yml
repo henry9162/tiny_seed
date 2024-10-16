@@ -21,4 +21,4 @@ jobs:
         run: dotnet restore smw/SMW.csproj
 
       - name: Build application
-        run: dotnet build -c Release --no-restore
+        run: dotnet build smw/SMW.csproj -c Release --no-restore
