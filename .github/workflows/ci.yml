@@ -1,0 +1,24 @@
+name: Continuous integration and deployment
+
+on: 
+  push:
+    branches:
+      - master
+
+jobs:
+  first-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup dotnet 7
+        uses: xt0rted/setup-dotnet@v1.0.0
+        with:
+            dotnet-version: '7.0.x'
+
+      - name: Restore dependencies
+        run: dotnet restore 
+
+      - name: Build application
+        run: dotnet build -c Release --no-restore
